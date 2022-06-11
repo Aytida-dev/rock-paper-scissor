@@ -1,8 +1,53 @@
+.top{
+    display: grid;
+    grid-template-columns: 50px 400px 50px 400px;
+    column-gap: 30px;
+}
 .computer{
     background-color: antiquewhite;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 200px;
     
 }
 .you{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
     background-color: aqua;
+}
+
+.you img,.computer img{
+    width: 50%;
+}
+
+.choosingPanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+
+}
+#check1{
+    background-image: url("images/rock.png");
+    background-size: cover;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+}
+#check0{
+    background-image: url("images/paper.png");
+    height: 50px;
+    border-radius: 30px;
+    background-size: cover;
+    border: none;
+    
+}
+#check-1{
+    background-image: url("images/scissor.png");
+    height: 50px;
+    border-radius: 30px;
+    background-size: cover;
+    border: none;
 }
