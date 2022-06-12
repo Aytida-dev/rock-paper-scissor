@@ -1,32 +1,57 @@
+body{
+    background-color: hsl(225, 5%, 16%);
+    background-image: url('images/bg.png');
+    font-family:cursive;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(188, 182, 180);
+    padding-top: 10%;
+}
+.main{
+    position: relative;
+}
 .top{
-    display: grid;
-    grid-template-columns: 50px 400px 50px 400px;
-    column-gap: 30px;
+    display: flex;
+    column-gap: 110px;
+    width: 950px;
+    margin: auto;
+    animation: 1s ease-in fadeIn;
+    
 }
 .computer{
-    background-color: antiquewhite;
+    animation-name: computer;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    background-repeat: no-repeat;
+    background-size:contain;
+    animation-iteration-count: infinite;
     display: flex;
     justify-content: center;
     align-items: center;    
-    height: 200px;
+    /* height: 200px; */
+    width: 200px;
+    
     
 }
 .you{
     display: flex;
     justify-content: center;
     align-items: center;   
-    background-color: aqua;
+    width: 200px;
+    /* background-color: aqua; */
 }
 
 .you img,.computer img{
-    width: 50%;
+    width: 100%;
 }
 
 .choosingPanel{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    width:50px;
+    height: 200px;
+    z-index: 100;
 
 }
 #check1{
@@ -35,6 +60,9 @@
     height: 50px;
     border-radius: 30px;
     border: none;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 #check0{
     background-image: url("images/paper.png");
@@ -42,7 +70,9 @@
     border-radius: 30px;
     background-size: cover;
     border: none;
-    
+    animation: 1s ease-out 0.3s 1 slideInFromLeft;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 #check-1{
     background-image: url("images/scissor.png");
@@ -50,4 +80,140 @@
     border-radius: 30px;
     background-size: cover;
     border: none;
+    animation: 1s ease-out 0.5s 1 slideInFromLeft;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
+#check1:hover{
+    cursor: pointer;
+}
+#check0:hover{
+    cursor: pointer;
+}
+#check-1:hover{
+    cursor: pointer;
+}
+.result{
+    display: flex;
+    align-items: center;
+   
+    text-align: center;
+}
+.bottom{
+    width: 660px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    column-gap: 60px;
+    margin-top: 40px;
+    visibility: hidden;
+}
+.bottom p{
+    text-align: center;
+}
+
+
+@keyframes computer{
+    0% {background-image: url("images/rock.png");}
+    50% {background-image: url("images/paper.png");}
+    100%{background-image: url("images/scissor.png");}
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    33%{opacity: 0.3;}
+    66%{opacity: 0.6;}
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.reload{
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    background-image: url('images/icons8-refresh-48.png');
+    background-position: center;
+    background-size: cover;
+    height: 70px;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+    color-scheme: dark;
+}
+.reload:hover{
+    
+    animation: 1s rel;
+}
+
+@keyframes rel{
+    0%{background-image: url('images/icons8-refresh.gif');
+   }
+    100%{background-image: url('images/icons8-refresh.gif');
+    }
+   
+}
+@media (max-width:1000px) {
+    .top{
+       flex-direction: column;
+       align-items: center;
+       column-gap: 0;
+       width: 200px;
+    }
+    .computer{
+        height: 200px;
+    }
+    .you{
+        height: 300px;
+    }
+    .choosingPanel{
+        flex-direction: row;
+        width: 200px;
+        height: 30px;
+    }
+    #check1{
+        width: 50px;
+    }
+    #check0{
+        width: 50px;
+    }
+    #check-1{
+        width: 50px;
+    }
+    
+    main{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    .bottom{
+        /* grid-template-columns: 1fr ; */
+        width: 40%;
+        margin-left: 0;
+        height: 100%;
+        display: flex;
+        align-items: space-between;
+        flex-direction: column;
+        
+        
+    }
+    p{
+        line-height: 200px;
+        height: 200px;
+        
+    }
+    body{
+        padding-top: 0;
+    }
+}
+   
+
+   

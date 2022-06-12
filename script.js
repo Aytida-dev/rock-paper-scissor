@@ -41,6 +41,7 @@ function choosenOption(event) {
     const img = document.createElement("img");
     img.setAttribute("src", src);
     document.getElementById("computer").appendChild(img);
+    img.style.animation = "fadeIn 1s"
 
     let src1;
 
@@ -51,9 +52,11 @@ function choosenOption(event) {
     const img1 = document.createElement("img");
     img1.setAttribute("src", src1);
     document.getElementById("you").appendChild(img1);
+    img1.style.animation = "fadeIn 1s"
 }
 
 function showResult(event) {
+    document.getElementById("result").style.animation = "fadeIn 1s"
     arrTemp.forEach((input) => {
         if (event.target.name === input.win) {
             document.getElementById("result").innerText = "You win";
@@ -69,12 +72,15 @@ function showResult(event) {
         }
         if (event.target.name === input.lose) {
             document.getElementById("result").innerText = "You lose";
-          
             j=j+1;
             document.getElementById("cScore").innerText=j;
         }
     })
+
+    document.getElementById("bottom").style.visibility="visible";
+    document.getElementById("computer").style.animationIterationCount=0;
 }
+
 // conrol
 function check(event) {
 
